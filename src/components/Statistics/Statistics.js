@@ -1,20 +1,16 @@
 import React, { Component } from 'react';
-
+import css from './Statistics.module.css';
 export class Statistics extends Component {
   render() {
     const { good, neutral, bad, total, positivePercentage } = this.props;
 
     return (
       <div>
-        <span>Good: {good}</span>
-        <br />
-        <span>Neutral: {neutral}</span>
-        <br />
-        <span>Bad: {bad}</span>
-        <br />
-        <span>Total: {total}</span>
-        <br />
-        <span>
+        <span className={css.item}>Good: {good}</span>
+        <span className={css.item}>Neutral: {neutral}</span>
+        <span className={css.item}>Bad: {bad}</span>
+        <span className={css.item}>Total: {total}</span>
+        <span className={css.item}>
           Positive feedback:{' '}
           {isNaN(positivePercentage) ? 0 : positivePercentage}%
         </span>
